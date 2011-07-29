@@ -179,7 +179,14 @@
 				<TextView style="@style/HeaderText" android:layout_weight="1"
 					android:text="Col 2" />
 				<TextView style="@style/HeaderText" android:text="Col 3" android:layout_span="2" />
-				<TextView style="@style/HeaderText" android:text="Col 4" />
+				<!--TextView style="@style/HeaderText" android:text="Col 4" /-->
+			</TableRow>
+			<TableRow style="@style/BodyRow">
+				<TextView android:text="Dummy" style="@style/BodyText" android:height="0dp" />
+				<TextView android:text="Dummy" style="@style/BodyText"
+					android:layout_weight="1" android:height="0dp" />
+				<TextView android:text="Dummy" style="@style/BodyText" android:height="0dp" />
+				<TextView android:text="Dummy" style="@style/BodyText" android:height="0dp" />
 			</TableRow>
 		</TableLayout>
 		<ScrollView android:layout_width="match_parent"
@@ -197,8 +204,8 @@
 					<TextView android:text="Cell 2,1" style="@style/BodyText" />
 					<TextView android:text="Cell 2,2" style="@style/BodyText"
 						android:layout_weight="1" />
-					<TextView android:text="Cell 2,3" style="@style/BodyText"/>
-					<TextView android:text="Cell 2,4" style="@style/BodyText" />
+					<TextView android:text="Cell 2,3" style="@style/BodyText" android:layout_span="2"/>
+					<!--TextView android:text="Cell 2,4" style="@style/BodyText" /-->
 				</TableRow>
 				<TableRow style="@style/BodyRow">
 					<TextView android:text="Cell 3,1" style="@style/BodyText" />

@@ -37,7 +37,8 @@ public class ScrollingTable extends LinearLayout
 			for ( int cellnum = 0; cellnum < row.getChildCount(); cellnum++ )
 			{
 				View cell = row.getChildAt( cellnum );
-				Integer cellWidth = cell.getWidth();
+				TableRow.LayoutParams params = (TableRow.LayoutParams)cell.getLayoutParams();
+				Integer cellWidth = params.span == 1 ? cell.getWidth() : 0;
 				if ( colWidths.size() <= cellnum )
 				{
 					colWidths.add( cellWidth );
@@ -61,7 +62,11 @@ public class ScrollingTable extends LinearLayout
 			{
 				View cell = row.getChildAt( cellnum );
 				TableRow.LayoutParams params = (TableRow.LayoutParams)cell.getLayoutParams();
-				params.width = colWidths.get( cellnum );
+				params.width = 0;
+				for( int span = 0; span < params.span; span++ )
+				{
+					params.width += colWidths.get( cellnum + span );
+				}
 			}
 		}
 	}
